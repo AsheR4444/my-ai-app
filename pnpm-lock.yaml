@@ -10,16 +10,25 @@ importers:
     dependencies:
       '@langchain/community':
         specifier: ^0.3.50
-        version: 0.3.50(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.54.2)(deepmerge@4.3.1)(dotenv@17.2.1)(openai@5.12.2(ws@8.18.3)(zod@4.0.17))(zod@4.0.17))(@ibm-cloud/watsonx-ai@1.6.10)(@langchain/core@0.3.68(@opentelemetry/api@1.9.0)(openai@5.12.2(ws@8.18.3)(zod@4.0.17)))(@opentelemetry/api@1.9.0)(axios@1.11.0)(ibm-cloud-sdk-core@5.4.2)(ignore@5.3.2)(jsonwebtoken@9.0.2)(openai@5.12.2(ws@8.18.3)(zod@4.0.17))(playwright@1.54.2)(weaviate-client@3.8.0)(ws@8.18.3)
+        version: 0.3.50(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.54.2)(deepmerge@4.3.1)(dotenv@17.2.1)(openai@5.12.2(ws@8.18.3)(zod@4.0.17))(zod@4.0.17))(@ibm-cloud/watsonx-ai@1.6.10)(@langchain/core@0.3.68(@opentelemetry/api@1.9.0)(openai@5.12.2(ws@8.18.3)(zod@4.0.17)))(@opentelemetry/api@1.9.0)(axios@1.11.0)(chromadb@3.0.11)(ibm-cloud-sdk-core@5.4.2)(ignore@5.3.2)(jsonwebtoken@9.0.2)(openai@5.12.2(ws@8.18.3)(zod@4.0.17))(pdf-parse@1.1.1)(playwright@1.54.2)(weaviate-client@3.8.0)(ws@8.18.3)
       '@langchain/core':
         specifier: ^0.3.68
         version: 0.3.68(@opentelemetry/api@1.9.0)(openai@5.12.2(ws@8.18.3)(zod@4.0.17))
       '@langchain/openai':
         specifier: ^0.6.7
         version: 0.6.7(@langchain/core@0.3.68(@opentelemetry/api@1.9.0)(openai@5.12.2(ws@8.18.3)(zod@4.0.17)))(ws@8.18.3)
+      '@langchain/textsplitters':
+        specifier: ^0.1.0
+        version: 0.1.0(@langchain/core@0.3.68(@opentelemetry/api@1.9.0)(openai@5.12.2(ws@8.18.3)(zod@4.0.17)))
+      '@openrouter/ai-sdk-provider':
+        specifier: ^1.1.2
+        version: 1.1.2(ai@5.0.8(zod@4.0.17))(zod@4.0.17)
       ai:
         specifier: ^5.0.8
         version: 5.0.8(zod@4.0.17)
+      chromadb:
+        specifier: ^3.0.11
+        version: 3.0.11
       dotenv:
         specifier: ^17.2.1
         version: 17.2.1
@@ -816,6 +825,13 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
+  '@openrouter/ai-sdk-provider@1.1.2':
+    resolution: {integrity: sha512-cfiKVpNygGFaJojBHFvtTf7UiF458Xh9yPcTg4FXF7bGYN5V33Rxx9dXNE12fjv6lHeC5C7jwQHDrzUIFol1iQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      ai: ^5.0.0
+      zod: ^3.24.1 || ^v4
+
   '@opentelemetry/api@1.9.0':
     resolution: {integrity: sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg==}
     engines: {node: '>=8.0.0'}
@@ -1318,6 +1334,41 @@ packages:
   chownr@3.0.0:
     resolution: {integrity: sha512-+IxzY9BZOQd/XuYPRmrvEVjF/nqj5kgT4kEq7VofrDoM1MxoRjEWkrCC3EtLi59TVawxTAn+orJwFQcrqEN1+g==}
     engines: {node: '>=18'}
+
+  chromadb-js-bindings-darwin-arm64@1.0.2:
+    resolution: {integrity: sha512-5guic+WJIEo11PpcY185QuQleqd7vWOBUY7WFX8I211p1HuOblGyYd4erPtiuxlc/hatUm/Eb0nTEmAxJ11QaA==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [darwin]
+
+  chromadb-js-bindings-darwin-x64@1.0.2:
+    resolution: {integrity: sha512-0RpzX+kGfASetQU0svpv9esAH2Nt4o7jaCeNAqVCXVvE7Rnz6gaVtzL5qBvCP7O3ht10UkVX85b7gITRBe32tQ==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [darwin]
+
+  chromadb-js-bindings-linux-arm64-gnu@1.0.2:
+    resolution: {integrity: sha512-fCRrFPI04+1bg/vO8eY9SxEXKk4PvT/DRfPpftMQB1w2gk68kRqEEpPj+lK9WP1nsTs1gq/qlbcf6oWs6MFJSw==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [linux]
+
+  chromadb-js-bindings-linux-x64-gnu@1.0.2:
+    resolution: {integrity: sha512-gEojseuh+XeUz3fHUYJwsXJfo54LE3oi5Ra+btbHj9eUF7ywyI+b/DNYu8t9FACnHz0Dh2+m/UHT3B1Dflne+w==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+
+  chromadb-js-bindings-win32-x64-msvc@1.0.2:
+    resolution: {integrity: sha512-od3qyUd7yyMI09AFia0ZXxt+YSlSE0Pf//JFJoWqmB45qWrWsXsONbk24RMWpkYTGMh7H6r3QdE+pVDRKqkfng==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [win32]
+
+  chromadb@3.0.11:
+    resolution: {integrity: sha512-Ikhx/CqRRhmvlpg7XNkzZowz4hwAOJvtSkfNG6D94dUky2Ivj4Bxt+xIS8D5ShHG2pS40PyPgEdllVjCRYNzgg==}
+    engines: {node: '>=20'}
+    hasBin: true
 
   client-only@0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
@@ -2293,6 +2344,9 @@ packages:
     engines: {node: '>=10.5.0'}
     deprecated: Use your platform's native DOMException instead
 
+  node-ensure@0.0.0:
+    resolution: {integrity: sha512-DRI60hzo2oKN1ma0ckc6nQWlHU69RH6xN0sjQTjMpChPfTYvKZdcQFfdYK2RWbJcKyUizSIy/l8OTGxMAM1QDw==}
+
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
     engines: {node: 4.x || >=6.0.0}
@@ -2395,6 +2449,10 @@ packages:
 
   path-parse@1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
+
+  pdf-parse@1.1.1:
+    resolution: {integrity: sha512-v6ZJ/efsBpGrGGknjtq9J/oC8tZWq0KWL5vQrk2GlzLEQPUDB1ex+13Rmidl1neNN358Jn9EHZw5y07FFtaC7A==}
+    engines: {node: '>=6.8.1'}
 
   peek-readable@4.1.0:
     resolution: {integrity: sha512-ZI3LnwUv5nOGbQzD9c2iDG6toheuXSZP5esSHBjopsXH4dg19soufvpUGA3uohi5anFtGb2lhAVdHzH6R/Evvg==}
@@ -3147,7 +3205,7 @@ snapshots:
 
   '@js-sdsl/ordered-map@4.4.2': {}
 
-  '@langchain/community@0.3.50(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.54.2)(deepmerge@4.3.1)(dotenv@17.2.1)(openai@5.12.2(ws@8.18.3)(zod@4.0.17))(zod@4.0.17))(@ibm-cloud/watsonx-ai@1.6.10)(@langchain/core@0.3.68(@opentelemetry/api@1.9.0)(openai@5.12.2(ws@8.18.3)(zod@4.0.17)))(@opentelemetry/api@1.9.0)(axios@1.11.0)(ibm-cloud-sdk-core@5.4.2)(ignore@5.3.2)(jsonwebtoken@9.0.2)(openai@5.12.2(ws@8.18.3)(zod@4.0.17))(playwright@1.54.2)(weaviate-client@3.8.0)(ws@8.18.3)':
+  '@langchain/community@0.3.50(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.54.2)(deepmerge@4.3.1)(dotenv@17.2.1)(openai@5.12.2(ws@8.18.3)(zod@4.0.17))(zod@4.0.17))(@ibm-cloud/watsonx-ai@1.6.10)(@langchain/core@0.3.68(@opentelemetry/api@1.9.0)(openai@5.12.2(ws@8.18.3)(zod@4.0.17)))(@opentelemetry/api@1.9.0)(axios@1.11.0)(chromadb@3.0.11)(ibm-cloud-sdk-core@5.4.2)(ignore@5.3.2)(jsonwebtoken@9.0.2)(openai@5.12.2(ws@8.18.3)(zod@4.0.17))(pdf-parse@1.1.1)(playwright@1.54.2)(weaviate-client@3.8.0)(ws@8.18.3)':
     dependencies:
       '@browserbasehq/stagehand': 1.14.0(@playwright/test@1.54.2)(deepmerge@4.3.1)(dotenv@17.2.1)(openai@5.12.2(ws@8.18.3)(zod@4.0.17))(zod@4.0.17)
       '@ibm-cloud/watsonx-ai': 1.6.10
@@ -3166,8 +3224,10 @@ snapshots:
       zod: 3.25.76
     optionalDependencies:
       '@browserbasehq/sdk': 2.6.0
+      chromadb: 3.0.11
       ignore: 5.3.2
       jsonwebtoken: 9.0.2
+      pdf-parse: 1.1.1
       playwright: 1.54.2
       weaviate-client: 3.8.0
       ws: 8.18.3
@@ -3284,6 +3344,11 @@ snapshots:
       fastq: 1.19.1
 
   '@nolyfill/is-core-module@1.0.39': {}
+
+  '@openrouter/ai-sdk-provider@1.1.2(ai@5.0.8(zod@4.0.17))(zod@4.0.17)':
+    dependencies:
+      ai: 5.0.8(zod@4.0.17)
+      zod: 4.0.17
 
   '@opentelemetry/api@1.9.0': {}
 
@@ -3781,6 +3846,31 @@ snapshots:
       supports-color: 7.2.0
 
   chownr@3.0.0: {}
+
+  chromadb-js-bindings-darwin-arm64@1.0.2:
+    optional: true
+
+  chromadb-js-bindings-darwin-x64@1.0.2:
+    optional: true
+
+  chromadb-js-bindings-linux-arm64-gnu@1.0.2:
+    optional: true
+
+  chromadb-js-bindings-linux-x64-gnu@1.0.2:
+    optional: true
+
+  chromadb-js-bindings-win32-x64-msvc@1.0.2:
+    optional: true
+
+  chromadb@3.0.11:
+    dependencies:
+      semver: 7.7.2
+    optionalDependencies:
+      chromadb-js-bindings-darwin-arm64: 1.0.2
+      chromadb-js-bindings-darwin-x64: 1.0.2
+      chromadb-js-bindings-linux-arm64-gnu: 1.0.2
+      chromadb-js-bindings-linux-x64-gnu: 1.0.2
+      chromadb-js-bindings-win32-x64-msvc: 1.0.2
 
   client-only@0.0.1: {}
 
@@ -4847,6 +4937,9 @@ snapshots:
 
   node-domexception@1.0.0: {}
 
+  node-ensure@0.0.0:
+    optional: true
+
   node-fetch@2.7.0:
     dependencies:
       whatwg-url: 5.0.0
@@ -4953,6 +5046,14 @@ snapshots:
   path-key@3.1.1: {}
 
   path-parse@1.0.7: {}
+
+  pdf-parse@1.1.1:
+    dependencies:
+      debug: 3.2.7
+      node-ensure: 0.0.0
+    transitivePeerDependencies:
+      - supports-color
+    optional: true
 
   peek-readable@4.1.0: {}
 

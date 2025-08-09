@@ -42,3 +42,25 @@ src/
 ## Environment Setup
 
 The project uses `dotenv` for environment variables. AI/LangChain integrations will likely require API keys (OpenAI, etc.) in environment configuration.
+
+## AI Agent Development Plan
+
+### Этап 1: Базовая настройка (В ПРОЦЕССЕ)
+- [x] 1.1 Настроить OpenRouter интеграцию (anthropic/claude-sonnet-4)
+- [ ] 1.3 Настроить обработку PDF файлов  
+- [ ] 1.4 Выбрать и настроить векторную БД
+- [ ] 1.5 Реализовать RAG (Retrieval-Augmented Generation)
+
+### Этап 2: Система загрузки и обработки документов
+- [ ] PDF парсер с разбивкой на чанки
+- [ ] API для загрузки PDF файлов
+- [ ] Эмбеддинги и индексация в векторной БД
+
+### Этап 3: RAG и поиск
+- [ ] Семантический поиск по документам
+- [ ] Интеграция поиска с LLM
+- [ ] Контекстные ответы на основе документов
+
+### Этап 4: Права доступа
+- [ ] Система пользователей
+- [ ] Разграничение доступа к документам
